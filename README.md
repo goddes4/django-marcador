@@ -152,3 +152,17 @@ $ heroku run bash
 from dj_static import Cling
 application = Cling(get_wsgi_application())
 ```
+
+* urlpatterns 를 이용하여 서비스 하기 (추천되지 않음)
+```python
+from django.conf import settings
+from django.conf.urls import include, url
+from django.conf.urls.static import static
+from django.contrib import admin
+
+urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
+]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+```
