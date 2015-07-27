@@ -143,3 +143,12 @@ web.1: idle 2015/07/21 12:48:01 (~ 1h ago)
 ```sh
 $ heroku run bash
 ```
+
+* WSGI 에서 static 서비스 하기
+ 1. dj-static 설치
+ 2. setting.py 에 STATIC_ROOT = 'staticfiles' 추가
+ 3. wsgi.py 수정
+```python
+from dj_static import Cling
+application = Cling(get_wsgi_application())
+```
