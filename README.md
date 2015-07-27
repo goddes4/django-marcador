@@ -143,5 +143,3 @@ web.1: idle 2015/07/21 12:48:01 (~ 1h ago)
 ```sh
 $ heroku run bash
 ```
-
-
